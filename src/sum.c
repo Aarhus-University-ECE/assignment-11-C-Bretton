@@ -18,12 +18,28 @@ int sum (int n)
 /* Sum integers 1 to n */
 int sumtail (int n, int total)
 {
-    return 0;
+
+  if(n == 1){ //if n equal 1 return 1 + total
+    return 1 + total;
+  }
+  else{
+    return sumtail(n-1, n+total); //else return sumtail n-1, with new total being n + total.
+  }
+
 }
 
 /* Sum integers 1 to n */
 int sumwhile (int n)
 {
-  return 0;
+  assert(n >= 1); //assert that n is equal or larger than 1
+  int sumw = 0; //initialize while sum
+
+  for (int i = 1; i <= n; i++) //loop from integer 1 to n
+  {
+    sumw = sumw + i; //sums current integer i which is 1<= i <=n with the sumtotal (sumw)
+  }
+  
+
+  return sumw; //returns the sum total
 }
 
